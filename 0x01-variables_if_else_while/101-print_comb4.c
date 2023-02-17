@@ -16,7 +16,7 @@ int main(void)
 
 	while (aNum <= 9)
 	{
-		bnum = 0;
+		bNum = 0;
 		while (bNum <= 9)
 		{
 			cNum = 0;
@@ -26,7 +26,7 @@ int main(void)
 				{
 					putchar(aNum + 48); putchar(bNum + 48); putchar(cNum + 48);
 
-					if ((digit1 + digit2 + digit3) != 24)
+					if ((aNum + bNum + cNum) != 24)
 					{
 						putchar(',');
 						putchar(' ');

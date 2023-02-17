@@ -13,16 +13,16 @@
 
 int main(void)
 {
-	int iNum, iLastDigit;
+	int n, iLastDigit;
 
 	srand(time(0));
-	iNum = rand() - RAND_MAX / 2;
+	n = rand() - RAND_MAX / 2;
 
-	iLastDigit = iNum % 10; /*Finds the last digi*/
+	iLastDigit = n % 10; /*Finds the last digi*/
 
-	if (iLastDigit> 5) printf("Last digit of %i is %i and is greater than 5\n", iNum, iLastDigit);
-	else if (iLastDigit == 0) printf("Last digit of %i is %i and is 0\n", iNum, iLastDigit);
-	else if (iLastDigit < 6 && iLastDigit != 0) printf("Last digit of %i is %i and is less than 6 and not 0\n", iNum, iLastDigit);
+	if (iLastDigit> 5) printf("Last digit of %i is %i and is greater than 5\n", n, iLastDigit);
+	else if (iLastDigit == 0) printf("Last digit of %i is %i and is 0\n", n, iLastDigit);
+	else if (iLastDigit < 6 && iLastDigit != 0) printf("Last digit of %i is %i and is less than 6 and not 0\n", n, iLastDigit);
 
 	return (0);
 }
