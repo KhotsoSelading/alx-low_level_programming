@@ -4,9 +4,7 @@
 
 
 /**
- * main - Entry point
- *
- * Description: print value of n satus; zero, positive or negative
+ * main - print: value of n satus; zero, positive or negative
  *
  * Return: Always (Success)
 */
@@ -17,7 +15,7 @@ int main(void)
 	srand(time(0));
        
 	n= rand() - RAND_MAX / 2;
-
+	/* my code goes here */
 	if (n > 0) 
 	{ 
 		printf("%d is positive\n", n);
