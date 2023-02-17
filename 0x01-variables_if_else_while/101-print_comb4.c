@@ -14,21 +14,21 @@ int main(void)
 	int aNum = 0;
 	int bNum, cNum;
 
-	while(aNum<=9)
+	while (aNum <= 9)
 	{
 		bNum = 0;
-		while(bNum <= 9)
+		while (bNum <= 9)
 		{
 			cNum = 0;
-			while(cNum <= 9)
+			while (cNum <= 9)
 			{
 				if(aNum != bNum && aNum < bNum && bNum != cNum && bNum < cNum)
 				{
-					putchar(aNum + 48); 
-					putchar(bNum + 48); 
+					putchar(aNum + 48);
+					putchar(bNum + 48);
 					putchar(cNum + 48);
 
-					if (aNum + bNum + cNum!= 24)
+					if (aNum + bNum + cNum != 24)
 					{
 						putchar(',');
 						putchar(' ');
