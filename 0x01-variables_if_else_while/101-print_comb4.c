@@ -22,7 +22,7 @@ int main(void)
 			cNum = 0;
 			while (cNum <= 9)
 			{
-				if(aNum != bNum && aNum < bNum && bNum != cNum && bNum < cNum)
+				if (aNum != bNum && aNum < bNum && bNum != cNum && bNum < cNum)
 				{
 					putchar(aNum + 48);
 					putchar(bNum + 48);
