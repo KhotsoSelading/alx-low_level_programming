@@ -24,7 +24,9 @@ int main(void)
 			{
 				if ((aNum != bNum) && (aNum < bNum) && (bNum != cNum) && (bNum < cNum))
 				{
-					putchar(aNum + 48); putchar(bNum + 48); putchar(cNum + 48);
+					putchar(aNum + 48); 
+					putchar(bNum + 48); 
+					putchar(cNum + 48);
 
 					if ((aNum + bNum + cNum) != 24)
 					{
