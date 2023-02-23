@@ -3,7 +3,7 @@
 /**
  * print_diagonal - prints a diagonal line.
  *
- * @n: number of times the \ is printed.
+ * @n: number of times the character is printed.
 */
 
 void print_diagonal(int n)
@@ -18,7 +18,7 @@ void print_diagonal(int n)
 		{
 			for (iSpace = 1; iSpace <= iPos; ++iSpace)
 				_putchar(' ');
-			_putchar(92); /*92 the ascii code for \ */
+			_putchar(92); 
 			_putchar('\n');
 		}
 	}
