@@ -11,9 +11,9 @@ void print_diagonal(int n)
 {
 	int iPos, iSpace;
 
-	for (iPos = 1; iPos <= n; ++iPos)
+	for (iPos = 0; iPos <= n; ++iPos)
 	{
-		for (iSpace = 1; iSpace <= iPos; ++iSpace)
+		for (iSpace = 0; iSpace <= iPos; ++iSpace)
 			_putchar(' ');
 		_putchar(92);
 		_putchar('\n');
