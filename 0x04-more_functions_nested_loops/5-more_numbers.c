@@ -7,7 +7,7 @@
  * Return: Always 0. (Success)
 */
 
-void more_iNumbers(void)
+void more_numbers(void)
 {
 	int iNum, iRow, iCnt;
 
