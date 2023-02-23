@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * more_iNumbers - print 0 - 14 ten times and you
+ * more_numbers - print 0 - 14 ten times and you
  *		can only use _putchar three times
  *
  * Return: Always 0. (Success)
