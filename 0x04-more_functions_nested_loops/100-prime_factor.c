@@ -21,7 +21,7 @@ int main(void)
 			maxf = lNumber / a;
 		}
 	}
-	printf("%ld\n", maxf);
+	printf("%d\n", maxf);
 
 	return (0);
 }
