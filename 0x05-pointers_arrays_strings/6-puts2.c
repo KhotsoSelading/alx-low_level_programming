@@ -1,32 +1,21 @@
-#include "main.h"
+#include"main.h"
 
 /**
- * _atoi - converts a string to an integer
+ * puts2 - prints every character of a string
  *
- * @s: string input parameter
+ * @str: string parameter inputted
  *
- * Return: converted integer from string
+ * Return: Noting
 */
 
-int _atoi(char *s)
+void puts2(char *str)
 {
-	unsigned int num = 0;
-	int iResult = 1;
+	int i; /*counter*/
 
-	do {
-		if (*s == '-')
-		{
-			iResult *= -1;
-		}
-		else if (*s >= '0' && *s <= '9')
-		{
-			num = (num * 10) + (*s - '0');
-		}
-		else if (num > 0)
-		{
-			break;
-		}
-	} while (*s++);
-
-	return (num * iResult);
+	for (i = 0; str[i] != '\0'; ++i)
+	{
+		if (i % 2 == 0)
+			_putchar(str[i]);
+	}
+	_putchar('\n');
 }
