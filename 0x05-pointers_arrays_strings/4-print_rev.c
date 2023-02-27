@@ -13,11 +13,10 @@ void print_rev(char *s)
 	int i;
 
 	/*finds the length of string without null character*/
-	for (i= 0; s[i] != '\0'; ++i)
+	for (i = 0; s[i] != '\0'; ++i)
 		;
 
 	for (--i; i >= 0; --i)
 		_putchar(s[i]);
 	_putchar('\n');
 }
-
