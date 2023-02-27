@@ -2,7 +2,7 @@
 
 /**
  * _strcpy - copies a string from one pointer to another
- *	including \0 terminal null byte
+ *	including terminal null byte
  *
  * @src: string parameter input
  * @dest: destination of string
