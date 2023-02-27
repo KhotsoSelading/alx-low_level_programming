@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdlib.h>
 
 /**
- * main - generates random password
- * Return: 0. Always (Success)
+ * main - generates keygen.
+ * Return: 0 Always.
  */
 
 int main(void)
@@ -13,15 +13,14 @@ int main(void)
 	time_t t;
 
 	srand((unsigned int) time(&t));
-	while (c < 2772)
-	{
+	do {
 		r = rand() % 128;
 		if ((c + r) > 2772)
 			break;
 		c = c + r;
 		printf("%c", r);
-	}
+	} while  (c < 2772);
+
 	printf("%c\n", (2772 - c));
-	
 	return (0);
 }
