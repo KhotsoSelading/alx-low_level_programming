@@ -10,10 +10,10 @@
 
 int _strlen(char *s)
 {
-	int x; /*counter variable*/
+	int iCcounter;
 
-	for (x = 0; *s != '\0'; ++s)
-		++counter;
+	for (iCounter = 0; *s != '\0'; ++s)
+		++iCounter;
 
-	return (counter);
+	return (iCounter);
 }
