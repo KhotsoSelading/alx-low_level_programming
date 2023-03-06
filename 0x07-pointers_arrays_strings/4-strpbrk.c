@@ -11,7 +11,7 @@
  * Return: pointer to the bytes in @s
  *         or NULL if no byte is found
 */
- 
+
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int x, y;
