@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int ncoins = 0;
+	int ncoins = 0, cents;
 
 	if (argc != 2)
 	{
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	int cents = atoi(argv[1]);
+	cents = atoi(argv[1]);
 
 	while (cents > 0)
 	{
