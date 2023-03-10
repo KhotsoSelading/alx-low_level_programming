@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
 			}
 			j++;
 		} while (argv[i][j] != '\0');
-		add += atoi(argv[i]);
 		i++;
+		add += atoi(argv[i]);
 	} while (i < argc);
 
 	printf("%d\n", add);
