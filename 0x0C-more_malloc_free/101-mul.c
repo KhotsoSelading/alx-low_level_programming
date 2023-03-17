@@ -2,14 +2,10 @@
 
 /**
  * main - multiplies two positive numbers
- *
- * @argc: number of arguments
+ * @argc: n arguments
  * @argv: args
- *
- * Return: returns 0. (Success)
+ * Return: int
  */
-
-
 int main(int argc, char *argv[])
 {
 unsigned long mul;
