@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
 
 	mul = atol(argv[1]) *  atol(argv[2]);
 
-	printf("%s\n", mul);
+	printf("%lu\n", mul);
 	return (0);
 }
