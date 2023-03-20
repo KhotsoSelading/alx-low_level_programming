@@ -17,10 +17,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int i = 0, j = 0, k;
 	dog_t *d_izinja;
 
-	for (; name[i]; i++)
+	for (i; name[i]; i++)
 		;
 
-	for (; owner[j]; j++)
+	for (j; owner[j]; j++)
 		;
 
 	d_izinja = malloc(sizeof(dog_t));
