@@ -15,46 +15,37 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 
 	int i = 0, j = 0, k;
-	dog_t *d_izinja;
+	dog_t *doge;
 
 	while (name[i] != '\0')
 		i++;
 	while (owner[j] != '\0')
 		j++;
-
-	d_izinja = malloc(sizeof(dog_t));
-
-	if (d_izinja == NULL)
+	doge = malloc(sizeof(dog_t));
+	if (doge == NULL)
 	{
-		free(d_izinja);
+		free(doge);
 		return (NULL);
 	}
-
-	d_izinja->name = malloc(i * sizeof(d_izinja->name));
-
-	if (d_izinja->name == NULL)
+	doge->name = malloc(i * sizeof(doge->name));
+	if (doge->name == NULL)
 	{
-		free(d_izinja->name);
-		free(d_izinja);
+		free(doge->name);
+		free(doge);
 		return (NULL);
 	}
-
 	for (k = 0; k <= i; k++)
-		d_izinja->name[k] = name[k];
-
-	d_izinja->age = age;
-	d_izinja->owner = malloc(j * sizeof(d_izinja->owner));
-
-	if (d_izinja->owner == NULL)
+		doge->name[k] = name[k];
+	doge->age = age;
+	doge->owner = malloc(j * sizeof(doge->owner));
+	if (doge->owner == NULL)
 	{
-		free(d_izinja->owner);
-		free(d_izinja->name);
-		free(d_izinja);
+		free(doge->owner);
+		free(doge->name);
+		free(doge);
 		return (NULL);
 	}
-
 	for (k = 0; k <= j; k++)
-		d_izinja->owner[k] = owner[k];
-
-	return (d_izinja);
+		doge->owner[k] = owner[k];
+	return (doge);
 }
