@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int x, y;
+	int iOutcome = 0, x, y;
 	char o;
 	int (*func)(int, int);
 
@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	printf("%d\n", func(x, y));
+	iOutcome = func(x, y);
+	printf("%d\n", iOutcome);
 
 	return (0);
 }
