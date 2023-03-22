@@ -20,12 +20,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if ((argv[2][0]) && (y == 0))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
 	operation = get_op_func(argv[2]);
 
 	if (operation == NULL)
@@ -37,6 +31,11 @@ int main(int argc, char *argv[])
 	x = atoi(argv[1]);
 	y = atoi(argv[3]);
 
+	if ((argv[2][0]) && (y == 0))
+        {
+                printf("Error\n");
+                exit(100);
+        }
 	printf("%d\n", operation(x, y));
 	return (0);
 }
