@@ -12,7 +12,8 @@
 int main(int argc, char *argv[])
 {
 	int x, y;
-	int (*operation)(int, int);
+	char o;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,22 +21,26 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	operation = get_op_func(argv[2]);
+	x = atoi(argv[1]);
+	y = atoi(argv[3]);
 
-	if (operation == NULL)
+	func = get_op_func(argv[2]);
+
+	if (func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	x = atoi(argv[1]);
-	y = atoi(argv[3]);
+	o = *argv[2];
 
-	if ((argv[2][0]) && (y == 0))
-        {
-                printf("Error\n");
-                exit(100);
-        }
-	printf("%d\n", operation(x, y));
+	if ((y == 0) && (o == '/' || o == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", func(x, y));
+
 	return (0);
 }
