@@ -20,8 +20,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	x = atoi(argv[1]);
-	y = atoi(argv[3]);
 	operation = get_op_func(argv[2]);
 
 	if (argv[2][1])
@@ -35,6 +33,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+
+	x = atoi(argv[1]);
+	y = atoi(argv[3]);
 
 	printf("%d\n", operation(x, y));
 	return (0);
