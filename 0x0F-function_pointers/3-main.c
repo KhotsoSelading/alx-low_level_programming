@@ -11,8 +11,8 @@
 
 int main(int argc, char *argv[])
 {
-	int (*operation)(int, int);
 	int x, y;
+	int (*operation)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,13 +20,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	operation = get_op_func(argv[2]);
-
 	if (argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
+
+	operation = get_op_func(argv[2]);
 
 	if (operation == NULL)
 	{
