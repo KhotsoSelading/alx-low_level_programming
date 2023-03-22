@@ -5,8 +5,8 @@
  *
  * @array: pointer to array.
  * @size: size of @array.
- * @cmp: pointer to function call to 
- * 	check matching index in array
+ * @cmp: pointer to function call to
+ * check matching index in array
  *
  * Return: xth element if no matches,  -1 if size <= 0.
 */

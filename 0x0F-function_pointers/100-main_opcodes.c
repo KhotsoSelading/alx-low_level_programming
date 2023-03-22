@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		if (i != numBytes - 1)
 			printf(" ");
 	}
-	
+
 	printf("\n");
 	return (0);
 }
