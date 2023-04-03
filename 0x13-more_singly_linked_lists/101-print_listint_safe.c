@@ -1,21 +1,44 @@
 #include "lists.h"
 
-void free_listp(listp_t **head);
-
 /**
- * print_listint_safe - prints the linked list
+ * free_listp - frees linked list
  *
  * @head: head of a linked list
  *
- * Return: number of nodes in linked list
+ * Return: no return
+ */
+
+void free_listp(listp_t **head)
+{
+	listp_t *holder, *current;
+
+	if (head != NULL)
+	{
+		current = *head;
+		while ((holder = current) != NULL)
+		{
+			current = current->next;
+			free(holder);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * print_listint_safe - prints linked list
+ *
+ * @head: head of a linked list
+ *
+ * Return: number of nodes in the linked list
  */
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t iNodes = 0;
+	size_t numNodes;
 	listp_t *new, *addPtr, *headPtr = NULL;
 
-	do {
+	for (numNodes = 0; head != NULL; numNodes++)
+	{
 		new = malloc(sizeof(listp_t));
 
 		if (new == NULL)
@@ -34,40 +57,14 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
 				free_listp(&headPtr);
-				return (iNodes);
+				return (numNodes);
 			}
 		}
 
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
-		iNodes++;
-	} while (head != NULL);
+	}
 
 	free_listp(&headPtr);
-
-	return (iNodes);
-}
-
-/**
- * free_listp - frees the linked list
- *
- * @head: head of a list.
- *
- * Return: no return.
- */
-
-void free_listp(listp_t **head);
-{
-	listp_t *iHolder, *currentNode;
-
-	if (head != NULL)
-	{
-		currentNode = *head;
-		do {
-			currentNode = currentNode->next;
-			free(iHolder);
-		} while ((iHolder = currentNode) != NULL);
-
-		*head = NULL;
-	}
+	return (numNodes);
 }
