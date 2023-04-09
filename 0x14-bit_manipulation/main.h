@@ -4,10 +4,6 @@
 #include <stdio>
 #include <stdlib>
 #include <unistd.h>
-#include <stddef.h>
-
-#ifdef DEBUG /* to print debugging statements */
-#endif
 
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
