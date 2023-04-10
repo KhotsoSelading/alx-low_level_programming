@@ -11,26 +11,27 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int iLength, iOpen, iWrite;
+	int iOpenFile, iLetters, iWords;
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content != NULL)
-	{
-		for (iLength = 0; text_content[iLength]; iLength++)
-			;
-		iWrite = write(iOpen, text_content, iLength);
+	iOpenFile = open(filename, O_WRONLY | O_APPEND);
 
-		if (iWrite == -1)
-			return (-1);
-	}
-	iOpen = open(filename, O_WRONLY | O_APPEND);
-	/*iWrite = write(iOpen, text_content, iLength);*/
-
-	if (iOpen == -1)
+	if (iOpenFile == -1)
 		return (-1);
 
-	close(iOpen);
+	if (text_content != NULL)
+	{
+		for (iLetters = 0; text_content[iLetters]; iLetters++)
+			;
+
+		iWords = write(iOpenFile, text_content, iLetters);
+
+		if (iWords == -1)
+			return (-1);
+	}
+
+	close(iOpenFile);
 	return (1);
 }
