@@ -17,12 +17,14 @@ void print_binary(unsigned long int n)
 	{
 		spot = n >> i;
 
-		if (chars)
-			_putchar('0');
-		else if (spot & 1)
+		if (spot & 1)
 		{
 			_putchar('1');
 			chars++;
+		}
+		else if (chars)
+		{
+			_putchar('0');
 		}
 	}
 	if (!chars)
