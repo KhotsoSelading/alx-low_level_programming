@@ -3,9 +3,9 @@
 /**
  * errorFinding - function to print error messages and exit number with number
  *
- * @error: the exit number or the file descriptor
- * @str: name of originalFile or copyFile
- * @fd: the file descriptor
+ * @errCode: the exit number or the file descriptor
+ * @fileName: name of originalFile or copyFile
+ * @fileType: the file descriptor
  *
  * Return: 0. (Success)
 */
