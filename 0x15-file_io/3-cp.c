@@ -10,22 +10,25 @@
  * Return: 0. (Success)
 */
 
-int errorFinding(int errCode, char *str, int fd)
+int errorFinding(int errCode, char *fileName, int fileType)
 {
-	if (errCode == 97)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(errCode);
-	if (errCode == 98)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
-		exit(errCode);
-	if (errCode == 99)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
-		exit(errCode);
-	if (errCode == 100)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(errCode);
-	else
-		return (0);
+	switch (errCode)
+	{
+		case 97:
+			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+			exit(errCode);
+		case 98:
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fileName);
+			exit(errCode);
+		case 99:
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fileName);
+			exit(errCode);
+		case 100:
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileType);
+			exit(errCode);
+		default:
+			return (0);
+	}
 }
 
 /**
@@ -53,7 +56,7 @@ int main(int argc, char *argv[])
 	if (copyFile == -1)
 		errorFinding(99, argv[2], 0);
 
-	while ((inStatus = read(originalFile, buffer, 1024)) != NULL)
+	while ((inStatus = read(originalFile, buffer, 1024)) != 0)
 	{
 		if (inStatus == -1)
 			errorFinding(98, argv[1], 0);
