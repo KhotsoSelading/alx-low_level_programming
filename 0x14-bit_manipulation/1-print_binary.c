@@ -10,23 +10,14 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, chars = 0;
-	unsigned long int spot;
 
-	for (i = 63; i >= 0; i--)
+	if (n >> 0)
 	{
-		spot = n >> i;
-
-		if (spot & 1)
-		{
-			_putchar('1');
-			chars++;
-		}
-		else if (chars)
-		{
-			_putchar('0');
-		}
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
 	}
-	if (!chars)
+	else
 		_putchar('0');
+
 }
