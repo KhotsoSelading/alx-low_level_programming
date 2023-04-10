@@ -20,11 +20,15 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		for (iLength = 0; text_content[iLength]; iLength++)
 			;
+		iWrite = write(iOpen, text_content, iLength);
+
+		if (iWrite == -1)
+			return (-1);
 	}
 	iOpen = open(filename, O_WRONLY | O_APPEND);
-	iWrite = write(iOpen, text_content, iLength);
+	/*iWrite = write(iOpen, text_content, iLength);*/
 
-	if (iWrite == -1 || iOpen == -1)
+	if (iOpen == -1)
 		return (-1);
 
 	close(iOpen);
