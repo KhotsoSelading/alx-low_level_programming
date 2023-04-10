@@ -10,8 +10,8 @@
 int get_endianness(void)
 {
 	unsigned int end_num = 1;
-
 	char *c = (char *) &end_num;
+
 	return (c[0]);
 }
 
