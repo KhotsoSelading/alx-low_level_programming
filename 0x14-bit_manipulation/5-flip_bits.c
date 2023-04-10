@@ -9,13 +9,21 @@
  *
  * Return: the number of bits
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int iBits;
+	int i, iCounter;
+	unsigned long int spot, particular;
 
-	for (m; n >>= 1, m >>= 1 || iBits = 0; n)
-		if ((n & 1) != (m & 1))
-			iBits++;
+	iCounter = 0;
+	particular = n ^ m;
 
-	return (iBits);
+	for (i = 63; i >= 0; i--)
+	{
+		spot = particular >> i;
+		if (spot & 1)
+			iCounter++;
+	}
+
+	return (iCounter);
 }
