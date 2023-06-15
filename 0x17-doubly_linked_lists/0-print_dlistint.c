@@ -8,13 +8,22 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t count = 0;
-	
+	int count = 0;
+
+	if (h == NULL)
+		return count;
+
+	for (; h->prev != NULL; h = h->prev)
+	{
+		/* Empty body */
+	}
+
 	for (; h != NULL; h = h->next)
 	{
 		printf("%d\n", h->n);
 		count++;
 	}
-	
+
 	return count;
 }
+
