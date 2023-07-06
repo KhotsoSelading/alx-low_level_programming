@@ -14,20 +14,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	theHashTable = malloc(sizeof(hash_table_t));
 	if (theHashTable == NULL)
-		return NULL;
+		return (NULL);
 
 	theHashTable->size = size;
 	theHashTable->array = malloc(sizeof(hash_node_t *) * size);
 
 	if (theHashTable->array == NULL)
-		return NULL;
+		return (NULL);
 
-	while (i < size) 
+	while (i < size)
 	{
 		theHashTable->array[i] = NULL;
 		i++;
 	}
 
-	return theHashTable;
+	return (theHashTable);
 }
 
